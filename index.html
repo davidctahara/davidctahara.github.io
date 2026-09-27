@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>David Tahara | Finance, M&A & International Business</title>
-  <meta name="description" content="David Tahara is a New York-based finance professional with experience in M&A, corporate development, FP&A, and international business.">
-  <meta name="author" content="David Tahara">
+  <title>David Tahara | Corporate Development, M&A & Finance</title>
+  <meta
+    name="description"
+    content="David Tahara is a New York-based finance professional working across corporate development, M&A, valuation, financial modeling, FP&A and international business."
+  />
+  <meta name="author" content="David Tahara" />
 
-  <link rel="canonical" href="https://davidtahara.com/">
+  <link rel="canonical" href="https://davidtahara.com/" />
 
-  <meta property="og:title" content="David Tahara">
-  <meta property="og:description" content="Finance, M&A & International Business">
-  <meta property="og:url" content="https://davidtahara.com/">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="David Tahara" />
+  <meta
+    property="og:description"
+    content="Corporate Development, M&A & Finance | New York"
+  />
+  <meta property="og:url" content="https://davidtahara.com/" />
+  <meta property="og:type" content="website" />
 
   <script type="application/ld+json">
   {
@@ -22,7 +28,10 @@
     "name": "David Tahara",
     "alternateName": "David Christopher Tahara",
     "url": "https://davidtahara.com/",
-    "jobTitle": "Finance Professional",
+    "jobTitle": "Corporate Development and Finance Professional",
+    "sameAs": [
+      "https://www.linkedin.com/in/david-tahara-b983a818a"
+    ],
     "alumniOf": [
       {
         "@type": "CollegeOrUniversity",
@@ -30,7 +39,7 @@
       },
       {
         "@type": "CollegeOrUniversity",
-        "name": "Monroe University"
+        "name": "University of Bergen"
       }
     ]
   }
@@ -43,6 +52,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
@@ -51,13 +64,18 @@
     }
 
     .container {
-      width: min(900px, 88%);
-      margin: auto;
+      width: min(920px, 88%);
+      margin: 0 auto;
     }
 
     header {
-      padding: 35px 0;
-      border-bottom: 1px solid #e8e8e8;
+      padding: 28px 0;
+      border-bottom: 1px solid #e7e7e7;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 10;
     }
 
     nav {
@@ -66,106 +84,124 @@
       align-items: center;
     }
 
-    .name {
+    .brand {
       font-weight: 700;
-      letter-spacing: 1px;
-      font-size: 18px;
+      letter-spacing: 1.2px;
+      font-size: 17px;
     }
 
-    nav a {
+    .links a {
       color: #555;
       text-decoration: none;
-      margin-left: 25px;
+      margin-left: 22px;
       font-size: 14px;
     }
 
-    nav a:hover {
+    .links a:hover {
       color: #000;
     }
 
     .hero {
-      padding: 120px 0 100px;
+      padding: 120px 0 105px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #777;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(48px, 8vw, 82px);
-      line-height: 1.05;
+      font-size: clamp(52px, 8vw, 86px);
+      line-height: 1.02;
       letter-spacing: -3px;
       margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: 21px;
+      font-size: 22px;
       color: #555;
-      max-width: 650px;
+      max-width: 720px;
     }
 
     section {
-      padding: 70px 0;
-      border-top: 1px solid #e8e8e8;
+      padding: 72px 0;
+      border-top: 1px solid #e7e7e7;
     }
 
     h2 {
-      font-size: 14px;
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 30px;
       color: #777;
+      margin-bottom: 30px;
     }
 
     .about {
-      max-width: 720px;
+      max-width: 760px;
       font-size: 19px;
     }
 
     .entry {
-      margin-bottom: 32px;
+      margin-bottom: 34px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
     }
 
     .entry h3 {
-      font-size: 20px;
-      margin-bottom: 3px;
+      font-size: 21px;
+      margin-bottom: 4px;
     }
 
-    .entry .subtitle {
+    .subtitle {
+      color: #4f4f4f;
+      margin-bottom: 4px;
+    }
+
+    .detail {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .entry p {
+      max-width: 760px;
       color: #555;
     }
 
-    .entry .detail {
-      color: #888;
-      font-size: 14px;
-      margin-top: 3px;
-    }
-
-    .publication a,
-    .contact a {
+    .publication-link,
+    .contact-link {
       color: #171717;
       text-decoration: underline;
       text-underline-offset: 4px;
     }
 
     footer {
-      padding: 50px 0;
-      border-top: 1px solid #e8e8e8;
+      padding: 48px 0;
+      border-top: 1px solid #e7e7e7;
       color: #888;
       font-size: 13px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 680px) {
+      .links {
+        display: none;
+      }
+
       .hero {
-        padding: 80px 0 70px;
+        padding: 85px 0 75px;
       }
 
       .hero h1 {
         letter-spacing: -2px;
       }
 
-      nav .links {
-        display: none;
-      }
-
       section {
-        padding: 50px 0;
+        padding: 52px 0;
       }
     }
   </style>
@@ -176,7 +212,8 @@
 <header>
   <div class="container">
     <nav>
-      <div class="name">DAVID TAHARA</div>
+      <div class="brand">DAVID TAHARA</div>
+
       <div class="links">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -191,17 +228,21 @@
 <main>
 
   <div class="container hero">
+    <div class="eyebrow">New York</div>
     <h1>David Tahara</h1>
-    <p>Finance, M&A & International Business<br>New York</p>
+    <p>Corporate Development • M&A • Finance</p>
   </div>
 
   <section id="about">
     <div class="container">
       <h2>About</h2>
+
       <p class="about">
-        David Tahara is a New York-based finance professional with experience
-        across mergers and acquisitions, corporate development, financial
-        planning and analysis, and international business.
+        David Tahara is a New York-based finance professional working across
+        corporate development, mergers and acquisitions, valuation, financial
+        modeling, capital planning and FP&A. His background also includes
+        international business, investment analysis and cross-border professional
+        experience.
       </p>
     </div>
   </section>
@@ -212,8 +253,41 @@
 
       <div class="entry">
         <h3>Vantage Insurance Partners</h3>
-        <div class="subtitle">Corporate Development & FP&A</div>
+        <div class="subtitle">Corporate Development & Analytics Associate</div>
         <div class="detail">New York</div>
+        <p>
+          Focused on acquisitions, valuation, financial modeling, capital planning
+          and financial analysis, with exposure across corporate development and FP&A.
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3>Norwegian-American Chamber of Commerce</h3>
+        <div class="subtitle">Events & Finance Intern</div>
+        <div class="detail">New York</div>
+        <p>
+          Supported professional networking events and financial planning while
+          helping connect U.S. and Norwegian business communities.
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3>FOREX AB</h3>
+        <div class="subtitle">Analyst</div>
+        <div class="detail">Bergen, Norway</div>
+        <p>
+          Worked with foreign currency transactions, international transfers,
+          branch currency management and regulatory compliance.
+        </p>
+      </div>
+
+      <div class="entry">
+        <h3>Portfolio Analysis</h3>
+        <div class="subtitle">Equity Portfolio Experience</div>
+        <p>
+          Supported investment analysis, stock selection and performance tracking
+          across Oslo Stock Exchange-listed equities.
+        </p>
       </div>
 
     </div>
@@ -225,12 +299,14 @@
 
       <div class="entry">
         <h3>New York University</h3>
-        <div class="subtitle">M.A., International Relations</div>
+        <div class="subtitle">Master's Degree, International Relations and Business</div>
+        <div class="detail">2023–2025</div>
       </div>
 
       <div class="entry">
-        <h3>Monroe University</h3>
-        <div class="subtitle">Master of Business Administration</div>
+        <h3>University of Bergen</h3>
+        <div class="subtitle">Political Science</div>
+        <div class="detail">Bergen, Norway</div>
       </div>
 
     </div>
@@ -240,21 +316,30 @@
     <div class="container">
       <h2>Publications & Media</h2>
 
-      <div class="entry publication">
-        <h3>Journal of Political Inquiry</h3>
-        <div class="subtitle">
-          Selected writing published through New York University.
-        </div>
+      <div class="entry">
+        <h3>Adapting to Change: Norway’s Expanding Role in NATO’s Future</h3>
+        <div class="subtitle">Journal of Political Inquiry, New York University</div>
+        <div class="detail">December 2024</div>
+        <p>
+          Analysis of Norway’s evolving strategic role in NATO following the
+          expansion of the alliance in the Nordic region.
+        </p>
       </div>
 
     </div>
   </section>
 
   <section id="contact">
-    <div class="container contact">
+    <div class="container">
       <h2>Connect</h2>
+
       <p>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+        <a
+          class="contact-link"
+          href="https://www.linkedin.com/in/david-tahara-b983a818a"
+          target="_blank"
+          rel="noopener"
+        >
           LinkedIn
         </a>
       </p>
