@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>David Tahara | Corporate Development, M&A & Finance</title>
+
   <meta
     name="description"
     content="David Tahara is a New York-based finance professional with expertise in corporate development, M&A, financial modelling and international business."
   />
+
   <meta name="author" content="David Tahara" />
 
   <link rel="canonical" href="https://davidtahara.com/" />
@@ -46,10 +48,21 @@
   </script>
 
   <style>
+    :root {
+      --bg: #f4f2ed;
+      --card: #ebe8e1;
+      --text: #111111;
+      --muted: #66635d;
+      --line: #d5d1c8;
+      --accent: #1d2b25;
+      --white: #ffffff;
+      --max: 1180px;
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -57,151 +70,408 @@
     }
 
     body {
+      background: var(--bg);
+      color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      color: #171717;
-      background: #ffffff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
     }
 
     .container {
-      width: min(920px, 88%);
+      width: min(var(--max), 90%);
       margin: 0 auto;
     }
 
+    /* NAV */
+
     header {
-      padding: 28px 0;
-      border-bottom: 1px solid #e7e7e7;
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
-      z-index: 10;
+      z-index: 50;
+      background: rgba(244, 242, 237, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
     }
 
     nav {
+      min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     }
 
     .brand {
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      font-size: 17px;
-    }
-
-    .links a {
-      color: #555;
-      text-decoration: none;
-      margin-left: 22px;
       font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
     }
 
-    .links a:hover {
-      color: #000;
+    .nav-links {
+      display: flex;
+      gap: 30px;
     }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* HERO */
 
     .hero {
-      padding: 120px 0 105px;
+      min-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 0 80px;
     }
 
-    .eyebrow {
-      font-size: 13px;
+    .hero-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 38px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #777;
-      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(52px, 8vw, 86px);
-      line-height: 1.02;
-      letter-spacing: -3px;
-      margin-bottom: 24px;
+      font-size: clamp(74px, 12vw, 160px);
+      line-height: 0.83;
+      letter-spacing: -0.075em;
+      font-weight: 700;
+      max-width: 1000px;
     }
 
-    .hero p {
-      font-size: 22px;
-      color: #555;
-      max-width: 720px;
+    .hero h1 span {
+      display: block;
     }
+
+    .hero-bottom {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: end;
+    }
+
+    .hero-role {
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.25;
+      max-width: 540px;
+    }
+
+    .hero-intro {
+      max-width: 520px;
+      justify-self: end;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* SECTION COMMON */
 
     section {
-      padding: 72px 0;
-      border-top: 1px solid #e7e7e7;
+      border-top: 1px solid var(--line);
+      padding: 110px 0;
     }
 
-    h2 {
-      font-size: 13px;
+    .section-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 80px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #777;
-      margin-bottom: 30px;
+      color: var(--muted);
     }
 
-    .about {
-      max-width: 760px;
-      font-size: 19px;
+    .section-content {
+      max-width: 860px;
     }
 
-    .entry {
-      margin-bottom: 34px;
+    /* ABOUT */
+
+    .about-text {
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.16;
+      letter-spacing: -0.035em;
+      max-width: 950px;
     }
 
-    .entry:last-child {
-      margin-bottom: 0;
+    /* EXPERIENCE */
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 40px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .entry h3 {
-      font-size: 21px;
-      margin-bottom: 4px;
+    .experience-item:first-child {
+      padding-top: 0;
     }
 
-    .subtitle {
-      color: #4f4f4f;
-      margin-bottom: 4px;
+    .experience-company {
+      font-size: 25px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
     }
 
-    .detail {
-      color: #888;
-      font-size: 14px;
+    .experience-role {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .experience-desc {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 15px;
+    }
+
+    .experience-location {
+      text-align: right;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* EDUCATION */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .education-card {
+      min-height: 260px;
+      background: var(--card);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease;
+    }
+
+    .education-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .education-number {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .education-school {
+      font-size: 25px;
+      line-height: 1.15;
       margin-bottom: 10px;
     }
 
-    .entry p {
-      max-width: 760px;
-      color: #555;
+    .education-degree {
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    .publication-link,
-    .contact-link {
-      color: #171717;
-      text-decoration: underline;
-      text-underline-offset: 4px;
+    /* PUBLICATION */
+
+    .publication {
+      background: var(--accent);
+      color: var(--white);
+      padding: 52px;
+      display: block;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease;
+    }
+
+    .publication:hover {
+      transform: translateY(-5px);
+    }
+
+    .publication-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 80px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      opacity: 0.65;
+    }
+
+    .publication h3 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      max-width: 870px;
+      margin-bottom: 28px;
+    }
+
+    .publication p {
+      max-width: 600px;
+      opacity: 0.72;
+    }
+
+    .publication-arrow {
+      position: absolute;
+      right: 48px;
+      bottom: 40px;
+      font-size: 28px;
+    }
+
+    /* CONTACT */
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+    }
+
+    .contact-title {
+      font-size: clamp(48px, 7vw, 90px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .contact-links {
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 260px;
+    }
+
+    .contact-links a {
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .contact-links a:hover {
+      color: var(--text);
     }
 
     footer {
-      padding: 48px 0;
-      border-top: 1px solid #e7e7e7;
-      color: #888;
-      font-size: 13px;
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
     }
 
-    @media (max-width: 680px) {
-      .links {
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 820px) {
+      .nav-links {
         display: none;
       }
 
       .hero {
-        padding: 85px 0 75px;
+        min-height: auto;
+        padding: 100px 0 80px;
       }
 
-      .hero h1 {
-        letter-spacing: -2px;
+      .hero-meta {
+        margin-bottom: 28px;
+      }
+
+      .hero-bottom,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-intro {
+        justify-self: start;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
       }
 
       section {
-        padding: 52px 0;
+        padding: 80px 0;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .experience-location {
+        text-align: left;
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        justify-self: start;
+        width: 100%;
+      }
+
+      .publication {
+        padding: 34px 28px;
+      }
+
+      .publication-top {
+        margin-bottom: 55px;
+      }
+
+      .publication-arrow {
+        display: none;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero h1 {
+        font-size: 68px;
+      }
+
+      .hero-role {
+        font-size: 24px;
+      }
+
+      .about-text {
+        font-size: 29px;
       }
     }
   </style>
@@ -212,14 +482,14 @@
 <header>
   <div class="container">
     <nav>
-      <div class="brand">DAVID TAHARA</div>
+      <a class="brand" href="#">David Tahara</a>
 
-      <div class="links">
+      <div class="nav-links">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Connect</a>
+        <a href="#publication">Publication</a>
+        <a href="#connect">Connect</a>
       </div>
     </nav>
   </div>
@@ -227,139 +497,270 @@
 
 <main>
 
+  <!-- HERO -->
+
   <div class="container hero">
-    <div class="eyebrow">New York</div>
-    <h1>David Tahara</h1>
-    <p>Corporate Development • M&A • Finance</p>
+
+    <div class="hero-meta">
+      <span>New York</span>
+      <span>Finance / M&A</span>
+    </div>
+
+    <h1>
+      <span>David</span>
+      <span>Tahara</span>
+    </h1>
+
+    <div class="hero-bottom">
+
+      <div class="hero-role">
+        Corporate Development,<br>
+        M&A & Finance
+      </div>
+
+      <div class="hero-intro">
+        New York-based finance professional with an international perspective
+        across transactions, financial analysis and strategic decision-making.
+      </div>
+
+    </div>
   </div>
 
-  <section id="about">
-    <div class="container">
-      <h2>About</h2>
+  <!-- ABOUT -->
 
-      <p class="about">
-        New York-based finance professional with expertise in Corporate Development,
-        M&A, and financial modelling, bringing an international perspective to every
-        deal and decision.
-      </p>
+  <section id="about">
+    <div class="container section-grid">
+
+      <div class="section-label">
+        01 / About
+      </div>
+
+      <div class="section-content">
+        <p class="about-text">
+          New York-based finance professional with expertise in Corporate
+          Development, M&A, and financial modelling, bringing an international
+          perspective to every deal and decision.
+        </p>
+      </div>
+
     </div>
   </section>
+
+  <!-- EXPERIENCE -->
 
   <section id="experience">
-    <div class="container">
-      <h2>Experience</h2>
+    <div class="container section-grid">
 
-      <div class="entry">
-        <h3>Vantage Insurance Partners</h3>
-        <div class="subtitle">Corporate Development & Analytics Associate</div>
-        <div class="detail">New York</div>
-        <p>
-          Focused on acquisitions, valuation, financial modeling, capital planning
-          and financial analysis, with exposure across corporate development and FP&A.
-        </p>
+      <div class="section-label">
+        02 / Experience
       </div>
 
-      <div class="entry">
-        <h3>Norwegian-American Chamber of Commerce</h3>
-        <div class="subtitle">Events & Finance Intern</div>
-        <div class="detail">New York</div>
-        <p>
-          Supported professional networking events and financial planning while
-          helping connect U.S. and Norwegian business communities.
-        </p>
-      </div>
+      <div class="section-content">
 
-      <div class="entry">
-        <h3>FOREX AB</h3>
-        <div class="subtitle">Analyst</div>
-        <div class="detail">Bergen, Norway</div>
-        <p>
-          Worked with foreign currency transactions, international transfers,
-          branch currency management and regulatory compliance.
-        </p>
-      </div>
+        <div class="experience-item">
+          <div>
+            <div class="experience-company">
+              Vantage Insurance Partners
+            </div>
 
-      <div class="entry">
-        <h3>Portfolio Analysis</h3>
-        <div class="subtitle">Equity Portfolio Experience</div>
-        <p>
-          Supported investment analysis, stock selection and performance tracking
-          across Oslo Stock Exchange-listed equities.
-        </p>
-      </div>
+            <div class="experience-role">
+              Corporate Development & Analytics Associate
+            </div>
 
+            <div class="experience-desc">
+              Acquisitions, valuation, financial modelling, capital planning,
+              financial analysis and FP&A.
+            </div>
+          </div>
+
+          <div class="experience-location">
+            New York
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div>
+            <div class="experience-company">
+              Norwegian-American Chamber of Commerce
+            </div>
+
+            <div class="experience-role">
+              Events & Finance Intern
+            </div>
+
+            <div class="experience-desc">
+              Supported professional networking initiatives and financial
+              planning while connecting U.S. and Norwegian business communities.
+            </div>
+          </div>
+
+          <div class="experience-location">
+            New York
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div>
+            <div class="experience-company">
+              FOREX AB
+            </div>
+
+            <div class="experience-role">
+              Analyst
+            </div>
+
+            <div class="experience-desc">
+              Foreign currency transactions, international transfers,
+              branch currency management and regulatory compliance.
+            </div>
+          </div>
+
+          <div class="experience-location">
+            Bergen, Norway
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
+
+  <!-- EDUCATION -->
 
   <section id="education">
-    <div class="container">
-      <h2>Education</h2>
+    <div class="container section-grid">
 
-      <div class="entry">
-        <h3>New York University</h3>
-        <div class="subtitle">Master's Degree, International Relations and Business</div>
-        <div class="detail">2023–2025</div>
+      <div class="section-label">
+        03 / Education
       </div>
 
-      <div class="entry">
-        <h3>University of Bergen</h3>
-        <div class="subtitle">Bachelor's Degree, Political Science</div>
-        <div class="detail">Bergen, Norway</div>
-      </div>
+      <div class="section-content">
 
+        <div class="education-grid">
+
+          <div class="education-card">
+            <div class="education-number">
+              01
+            </div>
+
+            <div>
+              <div class="education-school">
+                New York University
+              </div>
+
+              <div class="education-degree">
+                Master's Degree<br>
+                International Relations and Business
+              </div>
+            </div>
+          </div>
+
+          <div class="education-card">
+            <div class="education-number">
+              02
+            </div>
+
+            <div>
+              <div class="education-school">
+                University of Bergen
+              </div>
+
+              <div class="education-degree">
+                Bachelor's Degree<br>
+                Political Science
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="publications">
-    <div class="container">
-      <h2>Publications & Media</h2>
+  <!-- PUBLICATION -->
 
-      <div class="entry">
-        <h3>
-          <a
-            class="publication-link"
-            href="https://jpinyu.com/2024/12/09/adapting-to-change-norways-expanding-role-in-natos-future/"
-            target="_blank"
-            rel="noopener"
-          >
-            Adapting to Change: Norway’s Expanding Role in NATO’s Future
-          </a>
-        </h3>
+  <section id="publication">
+    <div class="container section-grid">
 
-        <div class="subtitle">Journal of Political Inquiry, New York University</div>
-        <div class="detail">December 2024</div>
-
-        <p>
-          Analysis of Norway’s evolving strategic role in NATO following the
-          expansion of the alliance in the Nordic region.
-        </p>
+      <div class="section-label">
+        04 / Publication
       </div>
 
-    </div>
-  </section>
+      <div class="section-content">
 
-  <section id="contact">
-    <div class="container">
-      <h2>Connect</h2>
-
-      <p>
         <a
-          class="contact-link"
+          class="publication"
+          href="https://jpinyu.com/2024/12/09/adapting-to-change-norways-expanding-role-in-natos-future/"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <div class="publication-top">
+            <span>Journal of Political Inquiry</span>
+            <span>NYU · 2024</span>
+          </div>
+
+          <h3>
+            Adapting to Change: Norway’s Expanding Role in NATO’s Future
+          </h3>
+
+          <p>
+            An analysis of Norway's evolving strategic role in NATO and the
+            implications of a changing Nordic security environment.
+          </p>
+
+          <div class="publication-arrow">
+            ↗
+          </div>
+
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+
+  <section id="connect">
+    <div class="container contact-wrap">
+
+      <div>
+        <div class="section-label" style="margin-bottom: 28px;">
+          05 / Connect
+        </div>
+
+        <div class="contact-title">
+          Let's<br>
+          connect.
+        </div>
+      </div>
+
+      <div class="contact-links">
+
+        <a
           href="https://www.linkedin.com/in/david-tahara-b983a818a"
           target="_blank"
           rel="noopener"
         >
-          LinkedIn
+          <span>LinkedIn</span>
+          <span>↗</span>
         </a>
-      </p>
+
+        <a href="https://davidtahara.com">
+          <span>DavidTahara.com</span>
+          <span>↗</span>
+        </a>
+
+      </div>
+
     </div>
   </section>
 
 </main>
 
 <footer>
-  <div class="container">
-    © 2026 David Tahara
+  <div class="container footer-inner">
+    <span>© 2026 David Tahara</span>
+    <span>New York</span>
   </div>
 </footer>
 
